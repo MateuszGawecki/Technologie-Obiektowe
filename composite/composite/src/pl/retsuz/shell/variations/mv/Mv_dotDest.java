@@ -6,9 +6,9 @@ import pl.retsuz.shell.gen.ICommand;
 import pl.retsuz.shell.variations.gen.CommandVariation;
 import pl.retsuz.shell.variations.gen.ICommandVariation;
 
-public class Mv_Path extends CommandVariation {
-    public Mv_Path(ICommandVariation next, ICommand parent) {
-        super(next,parent,"[a-zA-Z0-9.l\\/_]*\\s[a-zA-Z0-9.l\\/_]*");
+public class Mv_dotDest extends CommandVariation {
+    public Mv_dotDest(ICommandVariation next, ICommand parent) {
+        super(next,parent,"[a-zA-Z0-9.l\\/_]*\\s\\.");
     }
 
     @Override
@@ -17,18 +17,11 @@ public class Mv_Path extends CommandVariation {
         Composite c= (Composite) (this.getParent().getContext().getCurrent());
         String[] par = params.split(" ");
         String src = par[0];
-        String dest = par[1];
         String nameOfElementToMove = src.substring(src.lastIndexOf("/")+1);
-//        int idx = params.lastIndexOf(" ");
-//        String srcWithElement = params.substring(0,idx);
-//        int idx1 = srcWithElement.lastIndexOf("/");
-//        String src = srcWithElement.substring(0, idx);
-//        String nameOfElementToMove = srcWithElement.substring(idx1+1);
-//        String dest = params.substring(idx+1);
 
         try {
             IComposite source = c.findElementByPath(src).getParent();
-            IComposite destination = c.findElementByPath(dest);
+            IComposite destination = c;
             Composite elementToMove = new Composite();
             elementToMove.setName(nameOfElementToMove);
 

@@ -24,7 +24,7 @@ public class Mkdir_Path extends CommandVariation {
             newElement.setName(nameOfNewElement);
             ((Composite) elem).addElement(newElement);
         }catch(Exception e){
-            System.out.println("Docelowy element nie jest katalogiem.");
+            System.out.println("Coś nie tak/Path.");
         }
     }
 }
