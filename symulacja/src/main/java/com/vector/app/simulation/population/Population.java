@@ -1,5 +1,6 @@
 package com.vector.app.simulation.population;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +18,16 @@ import lombok.Getter;
 @AllArgsConstructor(staticName = "of")
 public class Population {
     private List<Individual> population;
+
+    public Population getCopy(){
+        List<Individual> newList = new ArrayList<>();
+
+        for(Individual individual: population){
+            newList.add(individual.getCopy());
+        }
+
+        return new Population(newList);
+    }
 
     public void addIndividual(final Individual individual) {
         this.population.add(individual);

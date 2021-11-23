@@ -7,12 +7,17 @@ import com.vector.app.simulation.individual.Individual;
 import com.vector.app.states.IState;
 import com.vector.app.states.havenotsymptoms.HaveNotSymptoms;
 import com.vector.app.states.havesymptoms.HaveSymptoms;
+import com.vector.app.states.resist.Resist;
 
 import static com.vector.app.states.Constants.PROBABILITY_OF_SYMPTOMS;
 
 public class Healthy implements IState {
 
     private final String name = "healthy";
+
+    public Healthy getCopy(){
+        return  new Healthy();
+    }
 
     @Override
     public void handle(final Individual individual) {

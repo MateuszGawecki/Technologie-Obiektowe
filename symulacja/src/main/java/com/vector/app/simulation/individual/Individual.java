@@ -38,10 +38,15 @@ public class Individual {
     private double positionX;
     private double positionY;
 
+    public Individual getCopy(){
+        return Individual.of(id,state.getCopy(),individualParams.getCopy(),isInRoom,positionX,positionY);
+    }
+
     @Override
     public String toString() {
         return state.getName() + "-" + positionX + ";" + positionY;
     }
+
 
     public void setPosition(final IVector iVector) {
         double[] components = iVector.getComponents();

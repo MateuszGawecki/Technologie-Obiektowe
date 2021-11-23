@@ -74,8 +74,17 @@ public class GeneratePopulation {
         double y = 0;
         if (random.nextInt(PROBABILITY_OF_ENTRY) == 0) {
             x = random.nextDouble() * room.getWidth();
+
+//            if (random.nextInt(PROBABILITY_OF_ENTRY) == 0) {
+//                y = room.getHeight() -1;
+//            }
+
         } else {
             y = random.nextDouble() * room.getHeight();
+
+//            if (random.nextInt(PROBABILITY_OF_ENTRY) == 0) {
+//                x = room.getWidth() -1;
+//            }
         }
         LinkedHashMap<String, Double> distances = new LinkedHashMap<>();
         LinkedHashMap<String, Integer> times = new LinkedHashMap<>();

@@ -9,6 +9,10 @@ public class Resist implements IState {
 
     private final String name = "resist";
 
+    public Resist getCopy(){
+        return  new Resist();
+    }
+
     @Override
     public void handle(final Individual individual) {
     }

@@ -16,6 +16,10 @@ public class HaveSymptoms implements IState {
     private final String name = "haveSymptoms";
     private int illnessCounter = 0;
 
+    public HaveSymptoms getCopy(){
+        return  new HaveSymptoms();
+    }
+
     @Override
     public void handle(final Individual individual) {
         int mod = this.getIllnessCounter() / 25;

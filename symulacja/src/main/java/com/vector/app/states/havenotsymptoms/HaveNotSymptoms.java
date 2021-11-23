@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.vector.app.simulation.individual.Individual;
 import com.vector.app.states.IState;
+import com.vector.app.states.havesymptoms.HaveSymptoms;
 import com.vector.app.states.resist.Resist;
 
 import lombok.Setter;
@@ -15,6 +16,10 @@ import static com.vector.app.states.Constants.PROBABILITY_OF_RECOVER;
 public class HaveNotSymptoms implements IState {
     private final String name = "haveNotSymptoms";
     private int illnessCounter = 0;
+
+    public HaveNotSymptoms getCopy(){
+        return  new HaveNotSymptoms();
+    }
 
     @Override
     public void handle(final Individual individual) {
